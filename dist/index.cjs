@@ -16255,6 +16255,8 @@ class Options {
         info(`summary_token_limits: ${this.lightTokenLimits.string()}`);
         info(`review_token_limits: ${this.heavyTokenLimits.string()}`);
         info(`api_base_url: ${this.apiBaseUrl}`);
+        info(`api_key: ${process.env.OPENAI_API_KEY}`);
+        info(`api_org: ${process.env.OPENAI_API_ORG}`);
     }
     checkPath(path) {
         const ok = this.pathFilters.check(path);
