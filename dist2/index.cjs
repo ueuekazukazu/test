@@ -18557,7 +18557,7 @@ var ChatGPTAPI = class {
     this._debug = !!debug;
     this._fetch = fetch2;
     this._completionParams = {
-      model: CHATGPT_MODEL,
+    //   model: CHATGPT_MODEL,
       temperature: 0.8,
       top_p: 1,
       presence_penalty: 1,
@@ -18673,7 +18673,7 @@ Current date: ${currentDate}`;
         if (this._debug) {
           console.log(`sendMessage (${numTokens} tokens)`, body);
         }
-        if (!stream) {
+        if (stream) {
           fetchSSE(
             url,
             {
