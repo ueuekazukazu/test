@@ -23271,8 +23271,8 @@ class TokenLimits {
             this.responseTokens = 2000;
         }
         else {
-            this.maxTokens = 4000;
-            this.responseTokens = 1000;
+            this.maxTokens = 16000;
+            this.responseTokens = 4000;
         }
         // provide some margin for the request tokens
         this.requestTokens = this.maxTokens - this.responseTokens - 100;
