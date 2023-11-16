@@ -21395,16 +21395,16 @@ Current date: ${currentDate}`;
                     temperature: options.openaiModelTemperature,
                     // model: openaiOptions.model
                 },
-                fetch: (url, options = {}) => {
-                    const defaultOptions = {
-                        agent: agent,
-                    };
-                    const mergedOptions = {
-                        ...defaultOptions,
-                        ...options,
-                    };
-                    return src_fetch(url, mergedOptions);
-                },
+                // fetch: (url, options = {}) => {
+                //     const defaultOptions = {
+                //         agent: agent,
+                //     };
+                //     const mergedOptions = {
+                //         ...defaultOptions,
+                //         ...options,
+                //     };
+                //     return src_fetch(url, mergedOptions);
+                // },
             });
         }
         else {
