@@ -18719,6 +18719,7 @@ Current date: ${currentDate}`;
               body: JSON.stringify(body),
               signal: abortSignal
             });
+            console.log(`response = ${res} `);
             if (!res.ok) {
               const reason = await res.text();
               const msg = `OpenAI error ${res.status || res.statusText}: ${reason}`;
@@ -18728,8 +18729,9 @@ Current date: ${currentDate}`;
               return reject(error);
             }
             const response = await res.json();
+            console.log(`response[debug] = ${response} `)
             if (this._debug) {
-              console.log(response);
+              console.log(`response[debug] = ${response} `);
             }
             if (response == null ? void 0 : response.id) {
               result.id = response.id;
