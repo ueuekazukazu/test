@@ -18761,6 +18761,7 @@ Current date: ${currentDate}`;
             return resolve(result);
           } catch (err) {
             console.log("error")
+            console.log(err)
             return reject(err);
           }
         }
