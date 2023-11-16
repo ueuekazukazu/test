@@ -18680,7 +18680,10 @@ Current date: ${currentDate}`;
               signal: abortSignal,
               onMessage: (data) => {
                 var _a2;
-                if (data === "[DONE]") {
+                const parsedData = JSON.parse(data);
+                // finish_reason を取得する
+                const finishReason = parsedData.choices[0].finish_reason;
+                if (finishReason === 'stop') {
                   result.text = result.text.trim();
                   return resolve(result);
                 }
