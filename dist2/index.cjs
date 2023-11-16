@@ -18652,9 +18652,12 @@ Current date: ${currentDate}`;
       async (resolve, reject) => {
         var _a, _b;
         const url = this._apiBaseUrl;
+        console.log(url)
+        console.log(this._apiKey)
+
         const headers = {
           "Content-Type": "application/json",
-          "api-key": `${this._apiKey}`
+          "api-key": this._apiKey
           // Authorization: `Bearer ${this._apiKey}`
         };
         const body = {
