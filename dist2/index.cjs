@@ -18673,7 +18673,7 @@ Current date: ${currentDate}`;
         if (this._debug) {
           console.log(`sendMessage (${numTokens} tokens)`, body);
         }
-        if (stream) {
+        if (!stream) {
           fetchSSE(
             url,
             {
@@ -18716,6 +18716,7 @@ Current date: ${currentDate}`;
           ).catch(reject);
         } else {
           try {
+            console.log("in else")
             const res = await this._fetch(url, {
               method: "POST",
               headers,
