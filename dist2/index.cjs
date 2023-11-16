@@ -18717,7 +18717,9 @@ Current date: ${currentDate}`;
         } else {
           try {
             console.log("in else")
+            axios.get('https://google.com').then(response =>{console.log("test")})
             console.log(JSON.stringify(body))
+
             const data = await fetchSSE(url, {
                 method: "POST",
                 headers,
