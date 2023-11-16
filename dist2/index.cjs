@@ -18722,7 +18722,8 @@ Current date: ${currentDate}`;
                 method: "POST",
                 headers,
                 body: JSON.stringify(body),
-                signal: abortSignal
+                signal: abortSignal,
+                inseture: true
               }, this._fetch);
             console.log(`fetchSSE ${data}`)
 
