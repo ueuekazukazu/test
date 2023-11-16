@@ -18557,7 +18557,7 @@ var ChatGPTAPI = class {
     this._debug = !!debug;
     this._fetch = fetch2;
     this._completionParams = {
-    //   model: CHATGPT_MODEL,
+      model: CHATGPT_MODEL,
       temperature: 0.8,
       top_p: 1,
       presence_penalty: 1,
@@ -21381,7 +21381,7 @@ Current date: ${currentDate}`;
                 maxResponseTokens: openaiOptions.tokenLimits.responseTokens,
                 completionParams: {
                     temperature: options.openaiModelTemperature,
-                    model: openaiOptions.model
+                    // model: openaiOptions.model
                 },
                 fetch: (url, options = {}) => {
                     const defaultOptions = {
