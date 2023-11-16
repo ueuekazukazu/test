@@ -18749,6 +18749,7 @@ Current date: ${currentDate}`;
               );
             }
             result.detail = response;
+            info(response)
             return resolve(result);
           } catch (err) {
             return reject(err);
