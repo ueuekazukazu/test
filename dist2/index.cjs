@@ -18718,6 +18718,13 @@ Current date: ${currentDate}`;
           try {
             console.log("in else")
             console.log(JSON.stringify(body))
+            const data = await fetchSSE(url, {
+                method: "POST",
+                headers,
+                body: JSON.stringify(body),
+                signal: abortSignal
+              }, this._fetch);
+            console.log(`fetchSSE ${data}`)
 
             const res = await this._fetch(url, {
               method: "POST",
