@@ -18717,6 +18717,8 @@ Current date: ${currentDate}`;
         } else {
           try {
             console.log("in else")
+            console.log(JSON.stringify(body))
+
             const res = await this._fetch(url, {
               method: "POST",
               headers,
@@ -18758,6 +18760,7 @@ Current date: ${currentDate}`;
             info(response)
             return resolve(result);
           } catch (err) {
+            console.log("error")
             return reject(err);
           }
         }
@@ -21438,6 +21441,7 @@ Current date: ${currentDate}`;
                 }
             }
             const end = Date.now();
+            info(`response: ${response}`)
             info(`response: ${JSON.stringify(response)}`);
             info(`openai sendMessage (including retries) response time: ${end - start} ms`);
         }
