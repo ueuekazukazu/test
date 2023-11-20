@@ -17467,7 +17467,7 @@ const octokit = {
                     : {})
             });
             console.log('createReviewComment:', content);
-            console.log((gitlab_ci_env_default()).ci.project.id, pull_number,)
+            console.log((gitlab_ci_env_default()).ci.project.id, pull_number,opts)
             const res = await api.MergeRequestDiscussions.create((gitlab_ci_env_default()).ci.project.id, pull_number, content, opts);
             return { data: res };
         },
