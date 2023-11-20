@@ -10452,6 +10452,7 @@ function post() {
       sudo,
       signal: service.queryTimeout ? AbortSignal.timeout(service.queryTimeout) : void 0
     });
+    console.log(response)
     if (service.camelize)
       response.body = (0,es5/* camelizeKeys */.k5)(response.body);
     return packageResponse(response, showExpanded);
