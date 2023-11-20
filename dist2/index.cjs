@@ -10411,6 +10411,7 @@ function get() {
   return async (service, endpoint2, options) => {
     const { asStream, sudo, showExpanded, maxPages, ...searchParams } = options || {};
     const signal = service.queryTimeout ? AbortSignal.timeout(service.queryTimeout) : void 0;
+    console.log(endpoint2);
     const response = await service.requester.get(endpoint2, {
       searchParams,
       sudo,
