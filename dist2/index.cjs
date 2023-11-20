@@ -18717,7 +18717,6 @@ Current date: ${currentDate}`;
         } else {
           try {
             console.log("in else")
-            axios.get('https://google.com').then(response =>{console.log("test")})
             console.log(JSON.stringify(body))
 
             const data = await fetchSSE(url, {
@@ -24037,6 +24036,8 @@ ${COMMENT_TAG}`;
                 }
                 catch (e) {
                     warning(`Failed to create review comment: ${e}`);
+                    warning(`Failed to create review comment: ${e.message}`);
+                    warning(`Failed to create review comment: ${e.stack}`);
                 }
             }
             commentCounter++;
