@@ -10462,6 +10462,8 @@ function post() {
 function put() {
   return async (service, endpoint2, { searchParams, isForm, sudo, showExpanded, ...options } = {}) => {
     const body = isForm ? appendFormFromObject(options) : options;
+    console.log(endpoint2);
+    console.log(body);
     const response = await service.requester.put(endpoint2, {
       body,
       searchParams,
