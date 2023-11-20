@@ -10444,6 +10444,8 @@ function get() {
 function post() {
   return async (service, endpoint2, { searchParams, isForm, sudo, showExpanded, ...options } = {}) => {
     const body = isForm ? appendFormFromObject(options) : options;
+    console.log(endpoint2);
+    console.log(searchParams, body, sudo)
     const response = await service.requester.post(endpoint2, {
       searchParams,
       body,
