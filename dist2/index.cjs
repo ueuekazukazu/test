@@ -10411,7 +10411,6 @@ function get() {
   return async (service, endpoint2, options) => {
     const { asStream, sudo, showExpanded, maxPages, ...searchParams } = options || {};
     const signal = service.queryTimeout ? AbortSignal.timeout(service.queryTimeout) : void 0;
-    console.log(endpoint2);
     const response = await service.requester.get(endpoint2, {
       searchParams,
       sudo,
@@ -10445,15 +10444,12 @@ function get() {
 function post() {
   return async (service, endpoint2, { searchParams, isForm, sudo, showExpanded, ...options } = {}) => {
     const body = isForm ? appendFormFromObject(options) : options;
-    console.log(endpoint2);
-    console.log(searchParams, body, sudo)
     const response = await service.requester.post(endpoint2, {
       searchParams,
       body,
       sudo,
       signal: service.queryTimeout ? AbortSignal.timeout(service.queryTimeout) : void 0
     });
-    console.log(response)
     if (service.camelize)
       response.body = (0,es5/* camelizeKeys */.k5)(response.body);
     return packageResponse(response, showExpanded);
@@ -10462,8 +10458,6 @@ function post() {
 function put() {
   return async (service, endpoint2, { searchParams, isForm, sudo, showExpanded, ...options } = {}) => {
     const body = isForm ? appendFormFromObject(options) : options;
-    console.log(endpoint2);
-    console.log(body);
     const response = await service.requester.put(endpoint2, {
       body,
       searchParams,
@@ -18659,8 +18653,6 @@ Current date: ${currentDate}`;
       async (resolve, reject) => {
         var _a, _b;
         const url = this._apiBaseUrl;
-        console.log(url)
-        console.log(this._apiKey)
 
         const headers = {
           "Content-Type": "application/json",
@@ -18723,8 +18715,6 @@ Current date: ${currentDate}`;
           ).catch(reject);
         } else {
           try {
-            console.log("in else")
-            console.log(JSON.stringify(body))
 
             const data = await fetchSSE(url, {
                 method: "POST",
@@ -18776,7 +18766,6 @@ Current date: ${currentDate}`;
             info(response)
             return resolve(result);
           } catch (err) {
-            console.log("error")
             console.log(err)
             return reject(err);
           }
